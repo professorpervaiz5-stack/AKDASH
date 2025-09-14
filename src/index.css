@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 270 100% 90%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 270 100% 90%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 270 100% 90%;
+
+    --primary: 270 100% 70%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 270 20% 15%;
+    --secondary-foreground: 270 100% 85%;
+
+    --muted: 270 20% 12%;
+    --muted-foreground: 270 40% 60%;
+
+    --accent: 270 80% 60%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 30% 20%;
+    --input: 270 30% 20%;
+    --ring: 270 100% 70%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    --pending: 0 72% 55%;
+    --pending-foreground: 0 0% 98%;
+    
+    --working: 38 92% 50%;
+    --working-foreground: 0 0% 98%;
+    
+    --finished: 142 71% 45%;
+    --finished-foreground: 0 0% 98%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 70%), hsl(280 100% 80%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 8%), hsl(270 20% 10%));
+    --gradient-glow: linear-gradient(45deg, hsl(270 100% 70% / 0.3), hsl(280 100% 80% / 0.3));
+    
+    --shadow-card: 0 4px 20px hsl(270 100% 70% / 0.1);
+    --shadow-glow: 0 0 20px hsl(270 100% 70% / 0.3);
+    --shadow-intense: 0 0 40px hsl(270 100% 70% / 0.5);
+
+    --text-glow: drop-shadow(0 0 8px hsl(270 100% 70% / 0.8));
+    
+    --radius: 0.75rem;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted) / 0.3);
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.6), hsl(var(--accent) / 0.6));
+    border-radius: 6px;
+    border: 1px solid hsl(var(--border) / 0.2);
+    transition: all 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--accent) / 0.8));
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.4);
+    transform: scale(1.1);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: hsl(var(--muted) / 0.3);
+  }
+
+  /* Firefox Scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted) / 0.3);
+  }
+
+  /* ScrollArea specific styling */
+  [data-radix-scroll-area-scrollbar] {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  [data-radix-scroll-area-thumb] {
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.7), hsl(var(--accent) / 0.7));
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  [data-radix-scroll-area-thumb]:hover {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    box-shadow: 0 0 12px hsl(var(--primary) / 0.5);
+    transform: scale(1.05);
+  }
+}
