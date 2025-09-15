@@ -8,6 +8,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Users, Clock, CheckCircle, AlertCircle, Calendar as CalendarIcon, BarChart3, Archive, CalendarDays } from 'lucide-react';
 import { format } from 'date-fns';
+import Chatbot from './Chatbot';
 
 interface WorkItem {
   date: string;
@@ -371,9 +372,9 @@ const Dashboard = () => {
         </div>
 
         {/* Employee Sections */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 p-4 border-2 border-border rounded-lg bg-card/20">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8 p-4 border-2 border-border rounded-lg bg-card/20">
           {/* Abdullah's Work */}
-          <Card className="bg-gradient-to-br from-card to-card/50 border-2 border-border shadow-2xl">
+          <Card className="bg-gradient-to-br from-card to-card/50 border-2 border-border shadow-2xl xl:col-span-1">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center text-primary-foreground font-bold border-2 border-border">
@@ -412,7 +413,7 @@ const Dashboard = () => {
           </Card>
 
           {/* Ayesha's Work */}
-          <Card className="bg-gradient-to-br from-card to-card/50 border-2 border-border shadow-2xl">
+          <Card className="bg-gradient-to-br from-card to-card/50 border-2 border-border shadow-2xl xl:col-span-1">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center text-primary-foreground font-bold border-2 border-border">
@@ -449,6 +450,11 @@ const Dashboard = () => {
               </ScrollArea>
             </CardContent>
           </Card>
+
+          {/* Chatbot */}
+          <div className="xl:col-span-1">
+            <Chatbot />
+          </div>
         </div>
 
         {/* Activity Feed */}
