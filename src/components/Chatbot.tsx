@@ -25,7 +25,7 @@ const Chatbot = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const webhookUrl = 'https://sialconnections.app.n8n.cloud/webhook-test/baf56169-84cb-4f19-8b7c-f0a9bd8c9b64';
+  const webhookUrl = '/api/webhook-test/baf56169-84cb-4f19-8b7c-f0a9bd8c9b64';
 
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
