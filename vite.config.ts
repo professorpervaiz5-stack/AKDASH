@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
       '/api': {
         target: 'https://sialconnections.app.n8n.cloud',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/api/, '/webhook')
       }
     }
   },

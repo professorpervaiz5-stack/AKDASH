@@ -25,7 +25,7 @@ const Chatbot = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const webhookUrl = '/api/webhook-test/baf56169-84cb-4f19-8b7c-f0a9bd8c9b64';
+  const webhookUrl = '/api/baf56169-84cb-4f19-8b7c-f0a9bd8c9b64';
 
   const sendMessage = async () => {
     if (!inputMessage.trim() || isLoading) return;
@@ -106,16 +106,13 @@ const Chatbot = () => {
           <div className="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center text-primary-foreground">
             <Bot className="w-5 h-5" />
           </div>
-          AI Chatbot - n8n Integration
+          AI Chatbot
         </CardTitle>
-        <p className="text-sm text-muted-foreground">
-          Send messages to trigger n8n workflow automation
-        </p>
       </CardHeader>
       
-      <CardContent className="flex-1 flex flex-col gap-4 p-6 pt-0">
+      <CardContent className="flex-1 flex flex-col gap-3 p-6 pt-0">
         {/* Messages Area */}
-        <ScrollArea className="flex-1 w-full rounded-md border-2 border-border p-4 bg-muted/10">
+        <ScrollArea className="flex-1 w-full rounded-md border-2 border-border p-3 bg-muted/10">
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -168,7 +165,7 @@ const Chatbot = () => {
         </ScrollArea>
 
         {/* Input Area */}
-        <div className="flex gap-2">
+        <div className="flex gap-2 mt-2">
           <Input
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
@@ -189,10 +186,6 @@ const Chatbot = () => {
               <Send className="w-4 h-4" />
             )}
           </Button>
-        </div>
-        
-        <div className="text-xs text-muted-foreground text-center">
-          Messages are sent to n8n workflow for processing
         </div>
       </CardContent>
     </Card>
