@@ -217,7 +217,7 @@ const Dashboard = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-        <div className="rounded-full h-12 w-12 border-2 border-primary mx-auto mb-4"></div>
+          <div className="rounded-full h-12 w-12 border-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading dashboard data...</p>
         </div>
       </div>
@@ -228,7 +228,7 @@ const Dashboard = () => {
     <div className="min-h-screen bg-background p-4 border-2 border-border rounded-lg">
       {/* Header */}
       <header className="bg-card border-2 border-border shadow-2xl rounded-lg mb-6">
-        <div className="max-w-7xl mx-auto px-6 py-6">
+        <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-primary">SIAL Connection</h1>
@@ -248,7 +248,7 @@ const Dashboard = () => {
           </div>
           
           {/* View Mode Controls */}
-          <div className="flex flex-wrap gap-3 mt-6">
+          <div className="flex flex-wrap gap-3 mt-4">
             <Button
               variant={viewMode === 'live' ? 'default' : 'secondary'}
               onClick={() => {
@@ -326,7 +326,6 @@ const Dashboard = () => {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 py-8 border-2 border-border rounded-lg bg-card/30">
       <div className="max-w-7xl mx-auto px-6 py-4 border-2 border-border rounded-lg bg-card/30">
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 p-4 border-2 border-border rounded-lg bg-card/20">
@@ -388,26 +387,26 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <ScrollArea className="h-96 w-full rounded-md border-2 border-border pr-4">
-              {abdullahWork.length === 0 ? (
-                <p className="text-muted-foreground text-center py-4">No tasks for this view</p>
-              ) : (
-                abdullahWork.slice(-10).reverse().map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg border-2 border-border/50 mb-2">
-                    <div className="mt-1 text-primary">
-                      {getStatusIcon(item.status)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-sm mb-2 text-foreground">{item.work}</p>
-                      <div className="flex items-center gap-2">
-                        <Badge variant={getStatusVariant(item.status)} className="">
-                          Work Status: {item.status}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">{item.date}</span>
+                {abdullahWork.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-4">No tasks for this view</p>
+                ) : (
+                  abdullahWork.slice(-10).reverse().map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg border-2 border-border/50 mb-2">
+                      <div className="mt-1 text-primary">
+                        {getStatusIcon(item.status)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-sm mb-2 text-foreground">{item.work}</p>
+                        <div className="flex items-center gap-2">
+                          <Badge variant={getStatusVariant(item.status)} className="">
+                            Work Status: {item.status}
+                          </Badge>
+                          <span className="text-xs text-muted-foreground">{item.date}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))
-              )}
+                  ))
+                )}
               </ScrollArea>
             </CardContent>
           </Card>
@@ -427,26 +426,26 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <ScrollArea className="h-96 w-full rounded-md border-2 border-border pr-4">
-              {ayeshaWork.length === 0 ? (
-                <p className="text-muted-foreground text-center py-4">No tasks for this view</p>
-              ) : (
-                ayeshaWork.slice(-10).reverse().map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg border-2 border-border/50 mb-2">
-                    <div className="mt-1 text-primary">
-                      {getStatusIcon(item.status)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-sm mb-2 text-foreground">{item.work}</p>
-                      <div className="flex items-center gap-2">
-                        <Badge variant={getStatusVariant(item.status)} className="">
-                          Work Status: {item.status}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">{item.date}</span>
+                {ayeshaWork.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-4">No tasks for this view</p>
+                ) : (
+                  ayeshaWork.slice(-10).reverse().map((item, index) => (
+                    <div key={index} className="flex items-start gap-3 p-4 bg-muted/20 rounded-lg border-2 border-border/50 mb-2">
+                      <div className="mt-1 text-primary">
+                        {getStatusIcon(item.status)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-sm mb-2 text-foreground">{item.work}</p>
+                        <div className="flex items-center gap-2">
+                          <Badge variant={getStatusVariant(item.status)} className="">
+                            Work Status: {item.status}
+                          </Badge>
+                          <span className="text-xs text-muted-foreground">{item.date}</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))
-              )}
+                  ))
+                )}
               </ScrollArea>
             </CardContent>
           </Card>
@@ -464,23 +463,23 @@ const Dashboard = () => {
           <CardContent>
             <ScrollArea className="h-96 w-full rounded-md border-0 pr-4">
               <div className="space-y-4">
-              {displayData.slice(-15).reverse().map((item, index) => (
-                <div key={index} className="flex items-center gap-4 py-3 border-b border-border/30 last:border-b-0">
-                  <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
-                    {getStatusIcon(item.status)}
+                {displayData.slice(-15).reverse().map((item, index) => (
+                  <div key={index} className="flex items-center gap-4 py-3 border-b border-border/30 last:border-b-0">
+                    <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+                      {getStatusIcon(item.status)}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium text-foreground">{item.employeeName}</p>
+                      <p className="text-sm text-muted-foreground truncate">{item.work}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant={getStatusVariant(item.status)} className="">
+                        Work Status: {item.status}
+                      </Badge>
+                      <span className="text-sm text-muted-foreground">{item.date}</span>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-medium text-foreground">{item.employeeName}</p>
-                    <p className="text-sm text-muted-foreground truncate">{item.work}</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Badge variant={getStatusVariant(item.status)} className="">
-                      Work Status: {item.status}
-                    </Badge>
-                    <span className="text-sm text-muted-foreground">{item.date}</span>
-                  </div>
-                </div>
-              ))}
+                ))}
                 {displayData.length === 0 && (
                   <p className="text-muted-foreground text-center py-8">No data available for this view</p>
                 )}
